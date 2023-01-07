@@ -39,7 +39,14 @@ export const Container = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
         margin: auto;
+
+        h1{
+            font-size: 22px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
 
         .contente-Form{
             justify-content: center;
@@ -52,8 +59,11 @@ export const Container = styled.div`
             width: 600px;
             height: 424px;
 
+            
+
             h2{
                 margin-bottom: 25px;
+                text-align: center;
             }
 
             .input-group{

@@ -1,28 +1,24 @@
 import { Container } from "./styles"
+import { UserColaborador } from "../UserColaborador"
+import { Form } from "../FormLogin"
+import React from "react"
 
 
 export function Right() {
+    
+    let identidadeUser = JSON.parse(localStorage.getItem('_DadosUser') || '{}')
+    let usuarioid = identidadeUser?.dados?.UserId
+
     return (
         <Container >
             <div className="content-btn">
-                <button>Produtos</button>
-                <button>Cadastrar user</button>
+                <button id="btnlogin">Produtos</button>
+                <button id="btncadastraUser" >Cadastrar user</button>
             </div>
-            <div className="content-Form">
-                
-                <form action="" className="contente-Form">
-                    <h2>🍕 Faz login</h2>
-                    <div className="input-group">
-                        <input type="text" id="username" placeholder="User" name="username" required />
-                    </div>
-                    <div className="input-group">
-                        <input type="password" id="senha" placeholder="Digite sua senha" name="senha" required />
-                    </div>
-                    <div className="input-group-btn">
-                        <button id="btnlogin" name="btnlogin">Entrar no App</button>
-                    </div>
-                </form>
-            </div>
+
+            {!usuarioid && <Form />}
+            {}<UserColaborador />
+            
         </Container>
 
     )
