@@ -71,7 +71,7 @@
   <path fill="#8A1114" d="M129.368 25.087a8.303 8.303 0 0 0-8.303 8.302h16.605a8.302 8.302 0 0 0-8.302-8.302Z"/>
   <path fill="#fff" d="M122.21 32.647h2.146a.322.322 0 0 0 .31-.263c.432-2.274 1.788-4.256 3.945-5.977a.286.286 0 0 0 .085-.338.288.288 0 0 0-.301-.174 7.577 7.577 0 0 0-6.503 6.394.32.32 0 0 0 .077.251.315.315 0 0 0 .241.107Z" opacity=".3"/>
   <path fill="#263238" d="M102.954 25.109c.171.007.343-.001.512-.026a.087.087 0 0 0 .056-.037.09.09 0 0 0 .014-.065.104.104 0 0 0-.11-.077 2.558 2.558 0 0 1-2.128-.665.086.086 0 0 0-.098-.02.102.102 0 0 0-.03.02.094.094 0 0 0-.024.064c0 .023.008.046.024.064a2.718 2.718 0 0 0 1.784.742Z"/>
-  <text style="fill: rgb(255, 255, 255); font-family: &quot;General Sans&quot;; font-size: 4.8px; white-space: pre;" transform="matrix(4.004427, 0, 0, 5.148497, -479.66568, -276.700684)"><tspan x="167.004" y="66.624" style="font-weight: 700;">Pizza</tspan><tspan>Controller</tspan></text>
+  <text style="fill: rgb(255, 255, 255); font-family: &quot;General Sans&quot;; font-size: 4.8px; white-space: pre;" transform="matrix(5.188568, 0, 0, 5.364688, -730.094482, -291.358215)" x="167.00399780273438" y="66.6240005493164">PIZZACONTROLLER</text>
   <text style="fill: rgb(255, 255, 255); font-family: &quot;General Sans&quot;; font-size: 2.6px; white-space: pre; opacity: 0.9;" transform="matrix(6.227994, 0, 0, 5.885125, -1219.544067, -423.583435)" x="226.755" y="86.654">O app da Cozinha
 </text>
 </svg>

@@ -47,7 +47,9 @@ export const Container = styled.div`
             margin-bottom: 20px;
             text-align: center;
         }
-
+        #boxForm{
+                box-shadow: 1px 3px 10px 1px rgb(0 0 0 / 33%);
+        }
         .contente-Form{
             justify-content: center;
             align-items: center;
