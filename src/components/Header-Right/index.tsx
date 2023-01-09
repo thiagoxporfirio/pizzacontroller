@@ -5,7 +5,7 @@ import { UserColaborador } from "../UserColaborador"
 import { Form } from "../FormLogin"
 import React from "react"
 import { UserWellCome } from '../UserWellCome'
-
+import {Route, Link} from 'react-router-dom'
 
 export function Right() {
     let identidadeUser = JSON.parse(localStorage.getItem('_DadosUser') || '{}')
@@ -35,17 +35,14 @@ export function Right() {
         setTimeout(() => {
             btncadastraUser?.setAttribute('style', 'background-color: grey;')
         }, 1000)
-
-        {!usuarioid && <UserColaborador />}
-        console.log(usuarioid)
         
     }
 
     return (
         <Container >
             <div className="content-btn">
-                <button id="btnProducts" onClick={handleProducts}>Produtos</button>
-                <button id="btncadastraUser" onClick={handlecadastreUser}>Cadastrar user</button>
+                <button id="btnProducts" onClick={handleProducts}><Link to="/products">Produtos</Link></button>
+                <button id="btncadastraUser" onClick={handlecadastreUser}><Link to="/registeruser">Cadastrar user</Link></button>
             </div>
 
             {!usuarioid && <Form />}

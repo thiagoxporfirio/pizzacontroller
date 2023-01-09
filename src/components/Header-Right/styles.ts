@@ -4,6 +4,11 @@ export const Container = styled.div`
     display: flex;
     flex-direction: row;
 
+    a{
+        text-decoration:none;
+        color: #cccc;
+    }
+
     .content-btn{
         width: 250px;
         background-color: red;
@@ -40,12 +45,13 @@ export const Container = styled.div`
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        margin: auto;
+        margin-top: 100px;
 
         h1{
             font-size: 22px;
             margin-bottom: 20px;
             text-align: center;
+            margin-top: 100px;
         }
         #boxForm{
                 box-shadow: 1px 3px 10px 1px rgb(0 0 0 / 33%);

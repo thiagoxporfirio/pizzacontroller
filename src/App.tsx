@@ -1,15 +1,14 @@
 import React from "react";
-import { GlobalStyles } from "./styles/GlobalStyles";
-import { Header } from "./components/Header/index";
-import { Right } from "./components/Header-Right/index";
-import { Form } from "./components/FormLogin/index";
+import AppRoutes from "./Routes"
+import { BrowserRouter, Link } from "react-router-dom"
+
 
 export function App() {
   return (
     <React.Fragment>
-      <GlobalStyles />
-      <Header />
-      <Right />
+      <BrowserRouter>
+        <AppRoutes />
+      </BrowserRouter>
       
     </React.Fragment>
     
