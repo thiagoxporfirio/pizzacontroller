@@ -1,11 +1,22 @@
 import { useState } from 'react'
 import { Container } from "./styles"
 import { Link } from 'react-router-dom'
+import { CProducts } from '../CadastraProducts'
 
 export function ComponentProducts(){
+    const [isModalVisible, SetIsModalVisible] = useState(false)
+
+    function handleCadastraProducts() {
+        SetIsModalVisible(true)
+    }
+
+    function hideModal(){
+        SetIsModalVisible(false)
+    }
 
     return(
         <Container>
+            <CProducts visible={isModalVisible} onClose={hideModal} />
             <div className='content'>
         
                 <div className='card'>
@@ -16,9 +27,10 @@ export function ComponentProducts(){
                         <h2>Cadastrado: {}</h2>
                         <h2>Vence em: {}</h2>
                         <div className='btn'>
-                            <h3 className='btnCadastraProducts'><Link to="/cadastrarproducts">+</Link></h3>
+                            <button className='btnCadastraProducts' onClick={handleCadastraProducts}>+</button>
                         </div>
                     </div>
+                    
                 </div>
                 <div className='card'>
                     <h2>⌚ Vence amanha ({})</h2>
@@ -28,7 +40,7 @@ export function ComponentProducts(){
                         <h2>Cadastrado: {}</h2>
                         <h2>Vence em: {}</h2>
                         <div className='btn'>
-                            <h3 className='btnCadastraProducts'><Link to="/cadastrarproducts">+</Link></h3>
+                            <button className='btnCadastraProducts' onClick={handleCadastraProducts}>+</button>
                         </div>
                     </div>
                 </div>
@@ -40,7 +52,7 @@ export function ComponentProducts(){
                         <h2>Cadastrado: {}</h2>
                         <h2>Vence em: {}</h2>
                         <div className='btn'>
-                            <h3 className='btnCadastraProducts'><Link to="/cadastrarproducts">+</Link></h3>
+                            <button className='btnCadastraProducts' onClick={handleCadastraProducts}>+</button>
                         </div>
                     </div>
                 </div>

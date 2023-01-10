@@ -23,7 +23,7 @@ export const Container = styled.div`
             padding: 16px;
             gap: 24px;
             width: 384px;
-            height: 321px;
+            /* height: 100%; */
             left: 0px;
             top: 0px;
             border: 2px solid rgba(204, 204, 204, 0.4);
@@ -55,16 +55,20 @@ export const Container = styled.div`
 
 
                     .btnCadastraProducts{
-                        margin-top: 10px;
+                        margin-top: 50px;
                         text-decoration: none;
+                        border:none;
+                        font-weight: bolder;
                         box-shadow: 1px 3px 15px 1px rgb(0 0 0 / 33%);
                         border-radius: 50px;
                         transition: all 0.3s;
                         padding: 2px;
+                        border: white;
+                        outline: none;
                     }
 
                     .btnCadastraProducts:hover{
-                        background-color: #5f5c9f;
+                        background-color: #CCC;
                     }
                 }
                 

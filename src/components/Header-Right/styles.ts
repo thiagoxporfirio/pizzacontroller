@@ -88,6 +88,7 @@ export const Container = styled.div`
                     opacity: 0.8;
                     font-size: 16px;
                     margin-top: 4px;
+                    outline: none;
                 }
 
             }

@@ -45,8 +45,8 @@ export function Right() {
                 <button id="btncadastraUser" onClick={handlecadastreUser}><Link to="/registeruser">Cadastrar user</Link></button>
             </div>
 
-            {/* {!usuarioid && <Form />} */}
-            {<UserWellCome />}
+            {!usuarioid && <Form />}
+            {usuarioid && <UserWellCome />}
             
         </Container>
 
