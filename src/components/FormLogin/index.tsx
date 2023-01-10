@@ -4,7 +4,7 @@ import { Container } from "../Header-Right/styles"
 export function Form() {
     const [username, SetUsername] = useState('')
     const [password, SetPassword] = useState('')
-    const [btnlogin, setBtnLogin] = useState('')
+    const [isSubmitting, setIsSubmitting] = useState(false)
 
     let dados = {
         username: {username},
@@ -13,7 +13,7 @@ export function Form() {
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        {btnlogin? 'Fazendo login...' : 'Login'}
+        setIsSubmitting(true);
 
         fetch('', {
             method: 'POST',
@@ -27,7 +27,6 @@ export function Form() {
             identidadeUser = {... identidadeUser, dados: JSON.parse(response)}
 
             localStorage.setItem('_DadosUser', JSON.stringify(identidadeUser))
-        
 
         }).catch((error) => {
             console.log(error.message)
@@ -36,11 +35,8 @@ export function Form() {
 
     }
 
-
     return (
         <div className="content-Form">
-                {username}
-                {password}
                 <form action="" className="contente-Form" onSubmit={handleSubmit}>
                     <h2>🍕 Faz login</h2>
                     <div className="input-group">
@@ -50,7 +46,7 @@ export function Form() {
                         <input type="password" id="senha" placeholder="Digite sua senha" onChange={(event) => SetPassword(event.target.value)} name="senha" required />
                     </div>
                     <div className="input-group-btn">
-                        <button type="submit" id="btnlogin" onChange={(event) => SetPassword(event)} name="btnlogin">Entrar no App</button>
+                    <button type="submit">{isSubmitting ? 'Logando...' : 'Entrar'}</button>
                     </div>
                 </form>
             </div>

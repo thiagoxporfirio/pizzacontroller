@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 
 export function UserWellCome(){
 
@@ -16,7 +17,7 @@ export function UserWellCome(){
                     </div>
                     
                     <div className="input-group-btn">
-                        <button type="submit" id="btnlogin" name="btnlogin">Ver produtos da cozinha</button>
+                        <button type="submit" id="btnlogin" name="btnlogin"><Link to="/products">Ver produtos da cozinha</Link></button>
                     </div>
                 </form>
             </div>

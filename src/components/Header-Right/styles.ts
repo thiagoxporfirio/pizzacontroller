@@ -29,12 +29,13 @@ export const Container = styled.div`
             color: #cccc;
             font-size: 16px;
             margin-top: 4px;
+            transition: all 0.1s;
         }
 
         button:hover{
             font-weight: 800px;
             background-color: grey;
-            transition: all 0.3s;
+            transition: all 0.1s;
         }
     }
 
