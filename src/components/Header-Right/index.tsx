@@ -34,7 +34,7 @@ export function Right() {
         
     }
     
-    const handleLogout =  async() => {
+    const handleLogout =  async () => {
         await auth.signout()
         window.location.href = window.location.href
     }

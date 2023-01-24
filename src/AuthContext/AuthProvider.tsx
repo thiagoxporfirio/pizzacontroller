@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
 import { useApi } from "../hooks/useApi"
 import { User } from "../types/User"
 import { AuthContext } from "./AuthContext"
@@ -8,7 +7,6 @@ export const AuthProvider = ({children}: { children: JSX.Element }) => {
 
     const [user, setUser] = useState<User | null>(null)
     const api = useApi()
-    const navigate = useNavigate()
 
     useEffect(() => {
         const validateToken = async ()=> {

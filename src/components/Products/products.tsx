@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Container } from "./styles"
-import { Link } from 'react-router-dom'
 import { CProducts } from '../CadastraProducts'
 
 export function ComponentProducts(){

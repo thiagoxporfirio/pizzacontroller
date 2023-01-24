@@ -8,10 +8,6 @@ import { AuthContext } from "../AuthContext/AuthContext";
 
 export function WellcomeUser(){
 
-    let identidadeUser = JSON.parse(localStorage.getItem('_DadosUser') || '{}')
-    let TOKEN = identidadeUser?.dados?.token
-    let username = identidadeUser?.dados?.username
-
     const auth = useContext(AuthContext)
 
     const handleProducts = () => {
