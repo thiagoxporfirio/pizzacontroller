@@ -16,8 +16,7 @@ export function Products(){
         <GlobalStyles />
         <Header />
         <Container >
-            {/* {!usuarioid && <UserNotExists />} */}
-            {<ComponentProducts />}
+            <ComponentProducts />
         </Container>
         </>
     )

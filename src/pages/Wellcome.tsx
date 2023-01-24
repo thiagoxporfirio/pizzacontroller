@@ -3,12 +3,16 @@ import { Container } from "../components/Header-Right/styles";
 import { UserWellCome } from "../components/UserWellCome";
 import { GlobalStyles } from "../styles/GlobalStyles";
 import {Route, Link} from 'react-router-dom'
+import { useContext } from "react";
+import { AuthContext } from "../AuthContext/AuthContext";
 
 export function WellcomeUser(){
 
     let identidadeUser = JSON.parse(localStorage.getItem('_DadosUser') || '{}')
     let TOKEN = identidadeUser?.dados?.token
     let username = identidadeUser?.dados?.username
+
+    const auth = useContext(AuthContext)
 
     const handleProducts = () => {
         let btnProducts = document.querySelector('#btnProducts')
@@ -31,6 +35,12 @@ export function WellcomeUser(){
         }, 1000)
         
     }
+
+    const handleLogout =  async() => {
+        await auth.signout()
+        window.location.href = window.location.href
+
+    }
     
     return(
         <>
@@ -40,6 +50,7 @@ export function WellcomeUser(){
                 <div className="content-btn">
                     <Link to="/products"><button id="btnProducts" onClick={handleProducts}>Produtos</button></Link>
                     <Link to="/registeruser"><button id="btncadastraUser" onClick={handlecadastreUser}>Cadastrar user</button></Link>
+                    {auth.user && <button onClick={handleLogout}>Sair</button>}
                 </div>
 
                 <UserWellCome />

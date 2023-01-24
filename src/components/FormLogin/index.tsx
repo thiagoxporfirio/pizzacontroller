@@ -1,7 +1,8 @@
 import { FormEvent, useContext, useState } from "react"
 import { Navigate, useNavigate } from "react-router-dom"
-import { toast } from "react-toastify/dist/core"
+import { toast } from "react-toastify"
 import { AuthContext } from "../../AuthContext/AuthContext"
+
 
 export function Form() {
     const auth = useContext(AuthContext)
@@ -26,7 +27,12 @@ export function Form() {
             const isLogged = await auth.signin(username, password)
 
             if(isLogged){
-                navigate('/wellcome')
+                toast.success(`Usuario logado, bem-vindo: ${username}`)
+
+                setTimeout(() => {
+                    navigate('/wellcome')
+                },1000)
+
             }else{
                 alert('Nao deu certo, verifique!')
             }
