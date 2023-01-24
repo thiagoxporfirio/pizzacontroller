@@ -1,14 +1,23 @@
-import { Routes, Route } from 'react-router-dom'
+import React from 'react'
+import { Routes, Route, } from 'react-router-dom'
+import { RequireAuth } from './AuthContext/RequireAuth'
+import { Dinied } from './pages/Dinied'
 import Home from './pages/HomePage'
 import { Products } from './pages/Products'
 import Register from './pages/Register'
+import { WellcomeUser } from './pages/Wellcome'
 
 export default function AppRoutes(){
+
+
     return(
         <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/registeruser' element={<Register />} />
-            <Route path='/products' element={<Products />} />
+            <Route path='/wellcome' element={<WellcomeUser />} />
+            <Route path='/registeruser' element={<RequireAuth><Register /></RequireAuth>} />
+            <Route path='/products' element={<RequireAuth><Products /></RequireAuth>} />
+            <Route path='/dinied' element={<Dinied />} />
         </Routes>
+        
     )
 }

@@ -110,6 +110,17 @@ export const Container = styled.div`
                     transition: all 0.2s;
                     background-color: #7f1e2b;
                 }
+
+                .btnOk{
+                    padding: 12px;
+                    width: 300px;
+                    border-radius: 6px;
+                    margin-top: 15px;
+                    font-size: 16px;
+                    font-weight: bolder;
+                    background-color: green;
+                    border: 1.5px solid rgba(204, 204, 204, 0.4);
+                }
             }
         }
     }

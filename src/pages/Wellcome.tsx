@@ -1,10 +1,11 @@
-
-import { Container } from "./styles"
-import { Form } from "../FormLogin"
-import React from "react"
+import { Header } from "../components/Header";
+import { Container } from "../components/Header-Right/styles";
+import { UserWellCome } from "../components/UserWellCome";
+import { GlobalStyles } from "../styles/GlobalStyles";
 import {Route, Link} from 'react-router-dom'
 
-export function Right() {
+export function WellcomeUser(){
+
     let identidadeUser = JSON.parse(localStorage.getItem('_DadosUser') || '{}')
     let TOKEN = identidadeUser?.dados?.token
     let username = identidadeUser?.dados?.username
@@ -30,16 +31,23 @@ export function Right() {
         }, 1000)
         
     }
+    
+    return(
+        <>
+            <GlobalStyles />
+            <Header />
+            <Container>
+                <div className="content-btn">
+                    <Link to="/products"><button id="btnProducts" onClick={handleProducts}>Produtos</button></Link>
+                    <Link to="/registeruser"><button id="btncadastraUser" onClick={handlecadastreUser}>Cadastrar user</button></Link>
+                </div>
 
-    return (
-        <Container >
-            <div className="content-btn">
-                <Link to="/products"><button id="btnProducts" onClick={handleProducts}>Produtos</button></Link>
-                <Link to="/registeruser"><button id="btncadastraUser" onClick={handlecadastreUser}>Cadastrar user</button></Link>
-            </div>
+                <UserWellCome />
+                
+            </Container>
 
-            <Form />
-        </Container>
 
+           
+       </>
     )
 }

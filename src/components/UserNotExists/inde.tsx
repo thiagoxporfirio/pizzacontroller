@@ -4,11 +4,6 @@ import {Route, Link} from 'react-router-dom'
 
 export function UserNotExists(){
 
-    let identidadeUser = JSON.parse(localStorage.getItem('_DadosUser') || '{}')
-    let usuarioid = identidadeUser?.dados?.UserId
-    let username = identidadeUser?.dados?.username
-
-
     return(
         <div className="content-Form">
                 

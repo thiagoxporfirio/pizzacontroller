@@ -1,37 +1,36 @@
-import { FormEvent, useState } from "react"
-import { Container } from "../Header-Right/styles"
+import { FormEvent, useContext, useState } from "react"
+import { Navigate, useNavigate } from "react-router-dom"
+import { toast } from "react-toastify/dist/core"
+import { AuthContext } from "../../AuthContext/AuthContext"
 
 export function Form() {
+    const auth = useContext(AuthContext)
+    const navigate = useNavigate()
+
     const [username, SetUsername] = useState('')
     const [password, SetPassword] = useState('')
     const [isSubmitting, setIsSubmitting] = useState(false)
+    
 
     let dados = {
         username: {username},
         password: {password},
     }
+   
 
-    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         setIsSubmitting(true);
 
-        fetch('', {
-            method: 'POST',
-            headers: {'Contente-type': 'application/json'},
-            body: JSON.stringify(dados)
-        }).then( async (res) => {
-            let response = await res.text()
-            console.log(response)
+        if(username && password){
+            const isLogged = await auth.signin(username, password)
 
-            let identidadeUser = JSON.parse(localStorage.getItem('_DadosUser') || '{}')
-            identidadeUser = {... identidadeUser, dados: JSON.parse(response)}
-
-            localStorage.setItem('_DadosUser', JSON.stringify(identidadeUser))
-
-        }).catch((error) => {
-            console.log(error.message)
-            
-        })
+            if(isLogged){
+                navigate('/wellcome')
+            }else{
+                alert('Nao deu certo, verifique!')
+            }
+         }
 
     }
 
@@ -46,7 +45,7 @@ export function Form() {
                         <input type="password" id="senha" placeholder="Digite sua senha" onChange={(event) => SetPassword(event.target.value)} name="senha" required />
                     </div>
                     <div className="input-group-btn">
-                    <button type="submit">{isSubmitting ? 'Logando...' : 'Entrar'}</button>
+                        <button type="submit">{isSubmitting ? 'Logando...' : 'Entrar'}</button>
                     </div>
                 </form>
             </div>
