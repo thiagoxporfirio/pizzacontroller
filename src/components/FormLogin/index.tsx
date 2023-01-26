@@ -1,5 +1,5 @@
 import { FormEvent, useContext, useState } from "react"
-import { Navigate, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 import { AuthContext } from "../../AuthContext/AuthContext"
 
@@ -31,7 +31,7 @@ export function Form() {
 
                 setTimeout(() => {
                     navigate('/wellcome')
-                },1000)
+                },1200)
 
             }else{
                 alert('Nao deu certo, verifique!')

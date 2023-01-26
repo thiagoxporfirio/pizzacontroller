@@ -1,8 +1,8 @@
 
 import { Container } from "./styles"
 import { Form } from "../FormLogin"
-import React, { useContext } from "react"
-import {Route, Link} from 'react-router-dom'
+import { useContext } from "react"
+import { Link } from 'react-router-dom'
 import { AuthContext } from "../../AuthContext/AuthContext"
 
 export function Right() {
@@ -34,7 +34,7 @@ export function Right() {
         
     }
     
-    const handleLogout =  async () => {
+    const handleLogout =  async() => {
         await auth.signout()
         window.location.href = window.location.href
     }
@@ -44,7 +44,7 @@ export function Right() {
             <div className="content-btn">
                 <Link to="/products"><button id="btnProducts" onClick={handleProducts}>Produtos</button></Link>
                 <Link to="/registeruser"><button id="btncadastraUser" onClick={handlecadastreUser}>Cadastrar user</button></Link>
-                {auth.user && <button onClick={handleLogout}>Sair</button>}
+                {auth.user && <Link to="/"><button onClick={handleLogout}>Sair</button></Link>}
             </div>
 
             <Form />
