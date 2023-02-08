@@ -4,15 +4,6 @@ import { CProducts } from '../CadastraProducts'
 import { OrdersBoard } from '../OrdersBoard'
 
 export function ComponentProducts(){
-    const [isModalVisible, SetIsModalVisible] = useState(false)
-
-    function handleCadastraProducts() {
-        SetIsModalVisible(true)
-    }
-
-    function hideModal(){
-        SetIsModalVisible(false)
-    }
 
     return(
         <Container>
