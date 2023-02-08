@@ -4,6 +4,7 @@ import { Form } from "../FormLogin"
 import { useContext } from "react"
 import { Link } from 'react-router-dom'
 import { AuthContext } from "../../AuthContext/AuthContext"
+import { useNavigate } from "react-router-dom"
 
 export function Right() {
     let identidadeUser = JSON.parse(localStorage.getItem('_DadosUser') || '{}')
@@ -11,6 +12,7 @@ export function Right() {
     let username = identidadeUser?.dados?.username
 
     const auth = useContext(AuthContext)
+    const navigate = useNavigate()
 
     const handleProducts = () => {
         let btnProducts = document.querySelector('#btnProducts')
@@ -36,7 +38,8 @@ export function Right() {
     
     const handleLogout =  async() => {
         await auth.signout()
-        window.location.href = window.location.href
+        navigate('/')
+        console.log('o evento aconteceu')
     }
 
     return (
@@ -44,7 +47,7 @@ export function Right() {
             <div className="content-btn">
                 <Link to="/products"><button id="btnProducts" onClick={handleProducts}>Produtos</button></Link>
                 <Link to="/registeruser"><button id="btncadastraUser" onClick={handlecadastreUser}>Cadastrar user</button></Link>
-                {auth.user && <Link to="/"><button onClick={handleLogout}>Sair</button></Link>}
+                {auth.user && <button onClick={handleLogout}>Sair</button>}
             </div>
 
             <Form />

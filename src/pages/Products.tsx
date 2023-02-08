@@ -3,7 +3,7 @@ import { Header } from "../components/Header/index";
 import { GlobalStyles } from "../styles/GlobalStyles";
 import { Container } from "../components/Header-Right/styles";
 import { UserNotExists } from "../components/UserNotExists/inde";
-import { ComponentProducts } from "../components/Products/products";
+import { ComponentProducts } from "../components/Products";
 
 export function Products(){
 

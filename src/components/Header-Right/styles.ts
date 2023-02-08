@@ -67,8 +67,7 @@ export const Container = styled.div`
             padding: 16px 16px 0px;
             width: 600px;
             height: 424px;
-
-            
+    
 
             h2{
                 margin-bottom: 25px;

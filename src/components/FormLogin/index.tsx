@@ -2,6 +2,7 @@ import { FormEvent, useContext, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 import { AuthContext } from "../../AuthContext/AuthContext"
+import { Content } from "./styles"
 
 
 export function Form() {
