@@ -1,7 +1,7 @@
 import { Board, OrdersContainer } from "./style"
 import { useState } from "react";
 import { CProducts } from '../CadastraProducts'
-//Props
+
 
 interface OrdersBoardProps {
     title: string;
