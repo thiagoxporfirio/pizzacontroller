@@ -11,10 +11,11 @@ export function CProducts({ visible, onClose }: CProductsProps){
 
     useEffect(() => {
         document.addEventListener('keydown', (event) => {
-            // if(event.key === 'Escape'){
-            //     onClose()
-            // } 
+            if(event.key === 'Escape'){
+                onClose()
+            } 
         })
+        
     }, [])
     
 
