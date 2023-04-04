@@ -1,6 +1,7 @@
 import { Board, OrdersContainer } from "./style"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CProducts } from '../CadastraProducts'
+import { api } from "../../hooks/useApi";
 
 
 interface OrdersBoardProps {
@@ -11,6 +12,16 @@ interface OrdersBoardProps {
 export function OrdersBoard(props: OrdersBoardProps){
 
     const [isModalVisible, SetIsModalVisible] = useState(false)
+    const [ orders, SetOrders ] = useState<OrdersContainer[]>([])
+
+
+    useEffect(() => {
+        api.get('/products')
+        .then(({ data }) => {
+            SetOrders(data)
+        })
+
+    }, [])
 
     function handleCadastraProducts() {
         SetIsModalVisible(true)
@@ -26,26 +37,26 @@ export function OrdersBoard(props: OrdersBoardProps){
 
         <Board>
             <CProducts visible={isModalVisible} onClose={hideModal}/>
-        <header>
-            <span>{props.title}</span>
-            <small>(1)</small>
-        </header>
+            <header>
+                <span>{props.title}</span>
+                <small>(1)</small>
+            </header>
 
-        <OrdersContainer>
-            <div className='DataContainer'>
-                <small className='titulo'>Titulo: </small>
-                <small>Responsavel: </small>
-                <small>Conservação: </small>
-                <small>Cadastrado: </small>
-                <small>Vence em: </small>
-                <span onClick={handleCadastraProducts}>+</span>
-            </div>
-            <div className='DataContainer'>
+            <OrdersContainer>
+                <div className='DataContainer'>
+                    <small className='titulo'>Titulo: </small>
+                    <small>Responsavel: </small>
+                    <small>Conservação: </small>
+                    <small>Cadastrado: </small>
+                    <small>Vence em: </small>
+                    <span onClick={handleCadastraProducts}>+</span>
+                </div>
+                <div className='DataContainer'>
 
-            </div>
-            
-            
-        </OrdersContainer>
-    </Board>
+                </div>
+                
+                
+            </OrdersContainer>
+        </Board>
     )
 }
