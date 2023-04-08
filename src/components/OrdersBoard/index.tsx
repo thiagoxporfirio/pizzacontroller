@@ -2,8 +2,8 @@ import { Board, OrdersContainer } from "./style"
 import { useEffect, useState } from "react";
 import { CProducts } from '../CadastraProducts'
 import { api } from "../../hooks/useApi";
-
-
+import { Order } from "../../types/Order"
+ 
 interface OrdersBoardProps {
     title: string;
     
@@ -12,7 +12,7 @@ interface OrdersBoardProps {
 export function OrdersBoard(props: OrdersBoardProps){
 
     const [isModalVisible, SetIsModalVisible] = useState(false)
-    const [ orders, SetOrders ] = useState<OrdersContainer[]>([])
+    const [ orders, SetOrders ] = useState<Order[]>([])
 
 
     useEffect(() => {
